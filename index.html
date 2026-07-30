@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capoeira Thessaloniki — Professor Malandro | Jacobina Arte</title>
+<meta name="description" content="Μαθήματα Capoeira στη Θεσσαλονίκη για παιδιά, εφήβους και ενήλικες από τον Professor Malandro. Ομάδα Jacobina Arte. Πρώτο μάθημα δωρεάν.">
+
+<!-- ====================================================================
+     ΟΔΗΓΙΕΣ ΓΙΑ EDIT (διάβασέ τες μία φορά)
+     --------------------------------------------------------------------
+     • Ολόκληρο το site είναι ΕΝΑ αρχείο. Κείμενο, στυλ, δομή είναι εδώ.
+     • ΚΕΙΜΕΝΟ: βρες το και γράψε πάνω του.
+     • ΧΡΩΜΑΤΑ: δες το :root παρακάτω (μεταβλητές --xxx).
+     • ΕΙΚΟΝΕΣ: κάθε <img> έχει src="...". Προς το παρόν τραβιούνται
+       από το παλιό site (squarespace) και φορτώνουν κανονικά. Όταν
+       στήσεις hosting, κατέβασέ τες και βάλε τοπική διαδρομή π.χ.
+       src="images/hero.jpg".
+     • ΤΟ LOGO Jacobina Arte: είναι το logo150.png του παλιού site,
+       εμφανίζεται σε header, ενότητα "Jacobina Arte" και footer.
+       Ψάξε "LOGO" στον κώδικα για να το βρεις.
+     • ΧΑΡΤΗΣ: ψάξε "GOOGLE-MAP" — ήδη στη νέα διεύθυνση.
+     • CD / MP3: ψάξε "CD-TRACKS" — τα links δείχνουν στα αρχεία mp3
+       του παλιού site. Αν κατεβάσεις hosting, ανέβασέ τα και άλλαξε src.
+     ==================================================================== -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --ink:#141210;
+  --ink-soft:#3a352f;
+  --paper:#f6f1e7;
+  --paper-warm:#efe7d6;
+  --green:#1f4d3a;
+  --green-deep:#143528;
+  --gold:#d99a2b;
+  --gold-bright:#f0b83e;
+  --clay:#b5502e;
+  --line:rgba(20,18,16,.12);
+  --font-display:"Archivo Black","Arial Black",sans-serif;
+  --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+h1,h2,h3{font-family:var(--font-display);line-height:1.04;letter-spacing:-.01em}
+.container{max-width:1180px;margin:0 auto;padding:0 28px}
+img{max-width:100%}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;transition:background .3s,padding .3s}
+header.nav.scrolled{background:rgba(15,13,11,.94);backdrop-filter:blur(10px);padding:9px 28px;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+/* LOGO (header) — Jacobina Arte logo από το παλιό site */
+.brand img.logo{height:48px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+.brand-text{color:#fff;font-family:var(--font-display);font-size:15px;letter-spacing:.02em;line-height:1;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.brand-text small{display:block;font-family:var(--font-body);font-weight:600;font-size:10px;letter-spacing:.22em;color:var(--gold-bright);margin-top:3px}
+nav.links{display:flex;gap:4px;align-items:center}
+nav.links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:13px;padding:8px 11px;border-radius:8px;transition:.2s;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+nav.links a:hover{color:#fff;background:rgba(255,255,255,.12)}
+nav.links a.cta{background:var(--gold);color:var(--green-deep);font-weight:700;text-shadow:none}
+nav.links a.cta:hover{background:var(--gold-bright)}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;color:#fff;position:relative;
+  background:linear-gradient(rgba(15,13,11,.6),rgba(20,53,40,.78)),
+  url('images/hero.jpg') center 28%/cover no-repeat}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--paper))}
+.hero-inner{position:relative;z-index:2;padding:130px 0 70px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:22px}
+.hero .eyebrow::before{content:"";width:34px;height:2px;background:var(--gold-bright)}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);color:#fff;margin-bottom:8px}
+.hero h1 .accent{display:block;color:transparent;-webkit-text-stroke:2px var(--gold-bright);font-size:clamp(1.6rem,4.5vw,3.2rem);letter-spacing:.02em;margin-top:10px}
+.hero .tagline{font-weight:600;font-size:clamp(1rem,2.2vw,1.35rem);color:rgba(255,255,255,.92);max-width:580px;margin:26px 0 34px;line-height:1.5}
+.hero .tagline b{color:var(--gold-bright)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:11px;font-size:15px;transition:.2s;cursor:pointer;border:0}
+.btn-primary{background:var(--gold);color:var(--green-deep)}
+.btn-primary:hover{background:var(--gold-bright);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* SECTION SCAFFOLD */
+.section-pad{padding:96px 0}
+.eyebrow-dark{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+.eyebrow-dark::before{content:"";width:30px;height:2px;background:var(--clay)}
+h2.section-title{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:22px;color:var(--ink)}
+.lead{font-size:1.12rem;color:var(--ink-soft);max-width:680px}
+
+/* ABOUT */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.about-text p{margin-bottom:16px;color:var(--ink-soft)}
+.about-text .kick{font-weight:700;color:var(--ink);font-size:1.15rem;margin-bottom:20px}
+.about-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(20,53,40,.4);aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover;display:block}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:16px;overflow:hidden;margin-top:64px;border:1px solid var(--line)}
+.fact{background:var(--paper-warm);padding:30px 24px;text-align:center}
+.fact .q{font-family:var(--font-display);font-size:1.9rem;color:var(--green);margin-bottom:6px}
+.fact .l{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
+
+/* CLASSES */
+.classes{background:var(--green-deep);color:#fff}
+.classes .eyebrow-dark{color:var(--gold-bright)}
+.classes .eyebrow-dark::before{background:var(--gold-bright)}
+.classes h2.section-title{color:#fff}
+.class-cards{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
+.class-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;transition:.3s}
+.class-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.class-card .cc-img{height:230px;overflow:hidden}
+.class-card .cc-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.class-card:hover .cc-img img{transform:scale(1.06)}
+.class-card .cc-body{padding:30px}
+.class-card h3{font-size:1.5rem;color:#fff;margin-bottom:6px}
+.class-card .who{color:var(--gold-bright);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.class-card p{color:rgba(255,255,255,.78);font-size:.97rem;margin-bottom:20px}
+.sched{list-style:none;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+.sched li{display:flex;justify-content:space-between;gap:14px;padding:7px 0;font-size:.92rem;border-bottom:1px dashed rgba(255,255,255,.09)}
+.sched li:last-child{border-bottom:0}
+.sched .day{font-weight:700;color:#fff}
+.sched .time{color:var(--gold-bright);font-weight:600;white-space:nowrap;text-align:right}
+.sched .note{display:block;font-size:.78rem;color:rgba(255,255,255,.55);font-weight:500}
+.free-note{margin-top:40px;text-align:center;font-size:1.05rem;color:rgba(255,255,255,.9)}
+.free-note b{color:var(--gold-bright)}
+
+/* INSTRUCTOR */
+.instructor{background:var(--paper-warm)}
+.inst-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.inst-img{border-radius:16px;overflow:hidden;box-shadow:0 26px 50px -22px rgba(0,0,0,.4);aspect-ratio:1/1;background:#fff}
+.inst-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.inst-body .name{font-size:clamp(2rem,4vw,2.8rem);margin:8px 0 4px}
+.inst-body .role{color:var(--clay);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.9rem;margin-bottom:22px}
+.inst-body p{color:var(--ink-soft);margin-bottom:15px}
+.inst-body .quote{border-left:3px solid var(--gold);padding-left:20px;margin:24px 0;font-style:italic;color:var(--ink);font-size:1.02rem}
+.inst-body .quote cite{display:block;font-style:normal;font-weight:700;color:var(--clay);margin-top:8px;font-size:.85rem}
+
+/* JACOBINA ARTE */
+.group{background:var(--ink);color:#fff;overflow:hidden}
+.group .eyebrow-dark{color:var(--gold-bright)}
+.group .eyebrow-dark::before{background:var(--gold-bright)}
+.group h2.section-title{color:#fff}
+.group-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.group-head .lead{color:rgba(255,255,255,.82);margin:0 auto}
+.group-head .eyebrow-dark{justify-content:center}
+/* LOGO (jacobina section) */
+.group-logo{width:150px;height:auto;margin:0 auto 26px;display:block;filter:drop-shadow(0 12px 30px rgba(217,154,43,.35))}
+.group-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.group-story p{color:rgba(255,255,255,.8);margin-bottom:16px}
+.group-story .mestre{border-radius:14px;overflow:hidden;margin-bottom:24px;max-width:280px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6)}
+.group-story .mestre img{width:100%;display:block}
+.group-story .mestre figcaption{background:rgba(255,255,255,.06);padding:10px 16px;font-size:.85rem;font-weight:600;color:var(--gold-bright)}
+.group-story .sign{font-style:italic;color:var(--gold-bright);margin-top:24px}
+.group-story .sign b{display:block;font-style:normal}
+.group-map{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px}
+.group-map h3{font-size:1.2rem;color:#fff;margin-bottom:20px}
+.group-map ul{list-style:none}
+.group-map li{padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-size:.95rem;display:flex;gap:12px}
+.group-map li:last-child{border-bottom:0}
+.group-map .city{font-weight:700;color:var(--gold-bright);min-width:130px}
+.group-map .ppl{color:rgba(255,255,255,.78)}
+
+/* GALLERY */
+.gallery{background:var(--paper)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px;margin-top:48px}
+.gal-grid a{border-radius:12px;overflow:hidden;display:block}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:.5s;display:block}
+.gal-grid a:hover img{transform:scale(1.08)}
+.gal-grid a.tall{grid-row:span 2}
+.gal-grid a.wide{grid-column:span 2}
+
+/* CD */
+.cd{background:var(--green);color:#fff}
+.cd-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.cd-cover{position:sticky;top:100px}
+.cd-cover .art{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:var(--green-deep);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;text-align:center;padding:32px}
+.cd-cover .art img{width:100%;height:100%;object-fit:cover}
+.cd-cover .art .ph{font-family:var(--font-display);font-size:1.4rem;color:var(--gold-bright);line-height:1.2}
+.cd-cover .meta{margin-top:22px}
+.cd-cover .meta .alb{font-family:var(--font-display);font-size:1.3rem;margin-bottom:4px}
+.cd-cover .meta .by{color:var(--gold-bright);font-weight:700;font-size:.9rem}
+.cd-cover .meta .cred{color:rgba(255,255,255,.7);font-size:.85rem;margin-top:14px;line-height:1.6}
+.cd .eyebrow-dark{color:var(--gold-bright)}
+.cd .eyebrow-dark::before{background:var(--gold-bright)}
+.cd h2.section-title{color:#fff}
+.track{display:flex;align-items:center;gap:16px;padding:13px 16px;border-radius:11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);margin-bottom:9px;transition:.2s;flex-wrap:wrap}
+.track:hover{background:rgba(255,255,255,.1);border-color:var(--gold)}
+.track .n{font-family:var(--font-display);font-size:.95rem;color:var(--gold-bright);min-width:26px}
+.track .tn{flex:1;font-weight:600;min-width:140px}
+.track .dur{color:rgba(255,255,255,.6);font-size:.85rem;font-variant-numeric:tabular-nums}
+.track audio{height:34px;max-width:200px}
+.cd-note{margin-top:26px;color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.7}
+
+/* LOCATION */
+.location{background:var(--green-deep);color:#fff}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.5)}
+.loc-info{background:rgba(255,255,255,.04);padding:56px 48px}
+.loc-info .eyebrow-dark{color:var(--gold-bright)}
+.loc-info .eyebrow-dark::before{background:var(--gold-bright)}
+.loc-info h2{font-size:2.2rem;color:#fff;margin-bottom:10px}
+.loc-info>p.intro{color:rgba(255,255,255,.72);margin-bottom:26px;font-size:.96rem}
+.loc-line{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.loc-line .ico{width:22px;height:22px;flex-shrink:0;color:var(--gold-bright);margin-top:2px}
+.loc-line .txt strong{display:block;color:#fff;font-size:1rem;margin-bottom:2px}
+.loc-line .txt span,.loc-line .txt a{color:rgba(255,255,255,.75);font-size:.94rem;text-decoration:none}
+.loc-line .txt a:hover{color:var(--gold-bright)}
+.loc-map{min-height:460px}
+.loc-map iframe{width:100%;height:100%;border:0;display:block;min-height:460px}
+
+/* CONTACT */
+.contact{background:var(--paper-warm);text-align:center}
+.contact h2{margin-bottom:16px}
+.contact .lead{margin:0 auto 34px}
+.social-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.social-btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:14px 24px;border-radius:11px;font-weight:700;font-size:15px;transition:.2s;background:var(--ink);color:#fff}
+.social-btn:hover{background:var(--green);transform:translateY(-2px)}
+.social-btn svg{width:20px;height:20px}
+
+/* BLOG */
+.blog{background:var(--paper)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.post{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.post:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(20,53,40,.35)}
+.post .pdate{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--clay);padding:20px 22px 0}
+.post .ptitle{font-family:var(--font-display);font-size:1.05rem;line-height:1.25;padding:8px 22px 22px;color:var(--ink)}
+.blog-note{text-align:center;margin-top:34px;color:var(--ink-soft)}
+.blog-note a{color:var(--clay);font-weight:700}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:56px 0 30px;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
+.footer-brand img{height:52px;width:auto}
+.footer-brand .brand-text{color:#fff;text-shadow:none}
+.foot-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.foot-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;font-weight:600}
+.foot-links a:hover{color:var(--gold-bright)}
+.copy{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7}
+.copy a{color:rgba(255,255,255,.55)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .about-grid,.inst-grid,.class-cards,.loc-grid,.group-grid,.cd-grid,.blog-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .inst-img{aspect-ratio:4/3;max-width:460px}
+  .about-img{max-width:460px;margin:0 auto}
+  .cd-cover{position:static}
+  .cd-cover .art{max-width:340px}
+  .loc-map{min-height:340px}
+  nav.links{position:fixed;top:0;right:-100%;width:76%;max-width:320px;height:100vh;flex-direction:column;align-items:stretch;gap:4px;padding:90px 22px 30px;background:var(--green-deep);transition:right .35s;z-index:99;overflow-y:auto}
+  nav.links.open{right:0}
+  nav.links a{font-size:16px;padding:14px 16px;text-shadow:none}
+  .burger{display:flex;z-index:101}
+}
+@media (max-width:520px){
+  .facts{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .section-pad{padding:64px 0}
+  .loc-info{padding:40px 26px}
+  .brand-text small{display:none}
+  .track audio{max-width:150px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <!-- LOGO (header): Jacobina Arte logo. Άλλαξε το src σε images/logo.png όταν στήσεις hosting -->
+    <img class="logo" src="images/logo.jpg" alt="Jacobina Arte logo">
+    <div class="brand-text">CAPOEIRA<br>THESSALONIKI<small>JACOBINA ARTE</small></div>
+  </a>
+  <button class="burger" id="burger" aria-label="Μενού"><span></span><span></span><span></span></button>
+  <nav class="links" id="links">
+    <a href="#about">Τι είναι</a>
+    <a href="#classes">Τμήματα</a>
+    <a href="#instructor">Εκπαιδευτής</a>
+    <a href="#group">Jacobina Arte</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#cd">CD</a>
+    <a href="#location">Dojo</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact" class="cta">Επικοινωνία</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <span class="eyebrow">Arte · Luta · Jogo · Vida</span>
+    <h1>CAPOEIRA<span class="accent">ΘΕΣΣΑΛΟΝΙΚΗ</span></h1>
+    <p class="tagline">Αφρο-βραζιλιάνικη πολεμική τέχνη, χορός και τρόπος ζωής — για παιδιά, εφήβους και ενήλικες, με τον <b>Professor Malandro</b>.</p>
+    <div class="hero-cta">
+      <a href="#classes" class="btn btn-primary">Δες τα τμήματα →</a>
+      <a href="#contact" class="btn btn-ghost">Πρώτο μάθημα δωρεάν</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="eyebrow-dark">Τι είναι η Capoeira</span>
+        <h2 class="section-title">Χορός, πολεμική τέχνη<br>και τρόπος ζωής</h2>
+        <p class="kick">Ένας αφρο-βραζιλιάνικος πολεμικός χορός — συνδυασμός πολεμικής τέχνης και ακροβατικών, με δύναμη, ταχύτητα, ένταση στα τραγούδια και ρυθμικές εναλλαγές.</p>
+        <p>Είναι το αμοιβαίο και συναρπαστικό συναίσθημα του διαλόγου, της «πονηριάς», της αδρεναλίνης και της εμπιστοσύνης μεταξύ φίλων, μέσα από έναν διαφορετικό κώδικα σώματος και μουσικής.</p>
+        <p>Είναι το υπέροχο αίσθημα του να ανακαλύπτεις ότι μπορείς να κάνεις νέες κινήσεις, να ελέγχεις το σώμα σου, αλλά και να βελτιώνεις την ευλυγισία, τον συγχρονισμό και την αντίληψη του χώρου γύρω σου. Είναι υγεία και καλή γυμναστική.</p>
+        <p>Είναι μια ευκαιρία να ξεχαστείς λίγο από την καθημερινότητα και να συγκεντρωθείς στη στιγμή. Δημοφιλής σε όλο τον κόσμο — για να καταλάβεις τι είναι, πρέπει να τη ζήσεις έστω για λίγο.</p>
+      </div>
+      <div class="about-img reveal">
+        <img src="images/bateria.jpg" alt="Capoeira roda">
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><div class="q">Όλοι</div><div class="l">Άντρες, γυναίκες, παιδιά</div></div>
+      <div class="fact"><div class="q">Κάθε<br>ηλικία</div><div class="l">Χωρίς όριο ηλικίας</div></div>
+      <div class="fact"><div class="q">0</div><div class="l">Καμία προηγούμενη εμπειρία</div></div>
+      <div class="fact"><div class="q">Δωρεάν</div><div class="l">Το πρώτο μάθημα</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLASSES ============ -->
+<section class="classes section-pad" id="classes">
+  <div class="container">
+    <span class="eyebrow-dark">Τμήματα</span>
+    <h2 class="section-title">Βρες το τμήμα σου</h2>
+    <p class="lead" style="color:rgba(255,255,255,.8)">Το πρώτο μάθημα είναι πάντα δωρεάν. Δυνατότητα μηνιαίας ή ανά συνεδρία πληρωμής.</p>
+    <div class="class-cards">
+      <div class="class-card reveal">
+        <div class="cc-img"><img src="images/saci.jpg" alt="Παιδικό & εφηβικό τμήμα"></div>
+        <div class="cc-body">
+          <div class="who">Παιδιά & Έφηβοι</div>
+          <h3>Παιδιά & Έφηβοι</h3>
+          <p>Η Καποέιρα διασκεδάζει τα παιδιά, βοηθά στη σωστή ψυχοκινητική τους ανάπτυξη και τα εφοδιάζει με ανθρώπινες αξίες. Βιώνουν το παιχνίδι, τη μουσική και τον διάλογο, δυναμώνουν σώμα και αυτοπεποίθηση, και μαθαίνουν πειθαρχία, σεβασμό και ομαδικότητα.</p>
+          <ul class="sched">
+            <li><span class="day">Παιδικό 5–7 ετών</span><span class="time">Τρ &amp; Πέμ · 16:15–17:15</span></li>
+            <li><span class="day">Παιδικό 8–11 ετών</span><span class="time">Τρ &amp; Πέμ · 17:00–18:00</span></li>
+            <li><span class="day">Εφηβικό 12–17 ετών</span><span class="time">Τρ &amp; Πέμ · 18:00–19:00</span></li>
+          </ul>
+          <p style="margin-top:16px;font-size:.88rem;color:var(--gold-bright)">Έκπτωση για αδερφάκια. Επικοινωνήστε μαζί μας και για τη συμμετοχή παιδιών &amp; εφήβων με αναπτυξιακές δυσκολίες (αυτισμός, μαθησιακές δυσκολίες).</p>
+        </div>
+      </div>
+      <div class="class-card reveal">
+        <div class="cc-img"><img src="images/gato.jpg" alt="Τμήμα ενηλίκων"></div>
+        <div class="cc-body">
+          <div class="who">Ενήλικες</div>
+          <h3>Ενήλικες</h3>
+          <p>Βελτίωση φυσικής κατάστασης, απώλεια βάρους, ενδυνάμωση, ευλυγισία και ρυθμός. Μια ολοκληρωμένη εναλλακτική στη μονοτονία του γυμναστηρίου, με τμήμα αρχαρίων και προχωρημένων για κάθε ηλικία, σωματότυπο και επίπεδο εμπειρίας.</p>
+          <ul class="sched">
+            <li><span class="day">Δευ &amp; Τετ<span class="note">Πρωινό</span></span><span class="time">09:00–10:15</span></li>
+            <li><span class="day">Τρ &amp; Πέμ<span class="note">Αρχάριοι</span></span><span class="time">20:30–21:45</span></li>
+            <li><span class="day">Τρ &amp; Πέμ<span class="note">Προχωρημένοι</span></span><span class="time">21:30–23:00</span></li>
+            <li><span class="day">Παρασκευή<span class="note">Μεικτό</span></span><span class="time">19:30–20:45</span></li>
+            <li><span class="day">Κυριακή<span class="note">Μουσική</span></span><span class="time">19:00–21:00</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="free-note">Το πρώτο μάθημα είναι <b>δωρεάν</b> για όλα τα τμήματα — το μόνο που χρειάζεσαι είναι όρεξη και κέφι.</p>
+  </div>
+</section>
+
+<!-- ============ INSTRUCTOR ============ -->
+<section class="instructor section-pad" id="instructor">
+  <div class="container">
+    <div class="inst-grid">
+      <div class="inst-img reveal">
+        <img src="images/malandro.jpg" alt="Professor Malandro">
+      </div>
+      <div class="inst-body reveal">
+        <span class="eyebrow-dark">Ο εκπαιδευτής</span>
+        <div class="name">Professor Malandro</div>
+        <div class="role">Σταμάτης Κράββαρης</div>
+        <p>Γεννήθηκε τον Απρίλιο του 1987 στη Ζαγορά. Στα 18 του μετακόμισε στη Θεσσαλονίκη για να σπουδάσει στη Γυμναστική Ακαδημία του Αριστοτελείου (ΤΕΦΑΑ). Η πρώτη του επαφή με την Capoeira έγινε το 2006 με το γκρουπ Jacobina Arte, που σύντομα έγινε οικογένειά του.</p>
+        <p>Με την καθοδήγηση του δασκάλου του, Mestre Pitbull, άρχισε να διδάσκει ενήλικες και παιδιά σε διάφορους χώρους της Θεσσαλονίκης. Από το 2013 διδάσκει Capoeira στο Dojo σε περισσότερους από 70 μαθητές.</p>
+        <p>Κάθε χρόνο ταξιδεύει σε όλη την Ελλάδα για σεμινάρια και έχει συμμετάσχει σε workshops στη Γαλλία, Ιταλία, Τουρκία, Κροατία, Αγγλία και Ισπανία. Το πιο σημαντικό του ταξίδι ήταν στη Βραζιλία, όπου ήρθε σε άμεση επαφή με την κουλτούρα της χώρας. Από το 2014 δουλεύει με παιδιά και εφήβους με μαθησιακές δυσκολίες και αυτισμό, και είναι εκπαιδευμένος στις πρώτες βοήθειες.</p>
+        <div class="quote">«Τον Σταμάτη θα τον περιγράφαμε ως έναν δάσκαλο με αστείρευτη ενέργεια και πάθος για την τέχνη στην οποία έχει αφιερωθεί. Έχει ταλέντο στην επικοινωνία με τους μαθητές του και στο να προσαρμόζει την τέχνη στο σώμα και την προσωπικότητά μας, ώστε να ανακαλύψει ο καθένας τη δική του καποέιρα.»
+          <cite>— Instrutora Dandara</cite>
+        </div>
+        <a href="#cd" class="btn btn-primary" style="margin-top:6px">Άκου το CD του →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JACOBINA ARTE ============ -->
+<section class="group section-pad" id="group">
+  <div class="container">
+    <div class="group-head">
+      <!-- LOGO (jacobina section) -->
+      <img class="group-logo reveal" src="images/logo.jpg" alt="Jacobina Arte logo">
+      <span class="eyebrow-dark reveal">Το γκρουπ</span>
+      <h2 class="section-title reveal">Grupo Jacobina Arte</h2>
+      <p class="lead reveal">Ένα διεθνές γκρουπ Capoeira με ρίζες στην Bahia της Βραζιλίας και οικογένεια capoeiristas σε όλο τον κόσμο.</p>
+    </div>
+
+    <div class="group-grid">
+      <div class="group-story reveal">
+        <figure class="mestre">
+          <img src="images/pitbull.jpg" alt="Mestre Pitbull">
+          <figcaption>Mestre Pitbull</figcaption>
+        </figure>
+        <p>Το Grupo Jacobina Arte ιδρύθηκε το 2001 από τον <b>Mestre Pitbull</b> (Marcos Almeida Brandao, Bahia, BR). Ονομάστηκε έτσι προς τιμήν της γενέτειράς του, της πόλης Jacobina στην Bahia. Είχε ήδη επιλέξει να ζήσει στη Θεσσαλονίκη έναν χρόνο νωρίτερα, προσκεκλημένος από τους σημερινούς Professor Serpente και Instrutora Araponga, όντας έτσι ο πρώτος Βραζιλιάνος δάσκαλος Capoeira στην Ελλάδα.</p>
+        <p>Η πρώτη προπόνηση έγινε στην παραλία της Επανομής τον Αύγουστο του 2000, με τη συμμετοχή και του Mestre Aranha (Nação Capoeira). Οι πρώτες ομαδικές προπονήσεις έγιναν σε ένα μικρό υπόγειο στην Τριανδρία, με τους πρώτους capoeiristas της Θεσσαλονίκης και την ομάδα του σημερινού Contra Mestre Ligeirinho.</p>
+        <p>Την άνοιξη του 2001 επιλέχθηκε ως έδρα η ΧΑΝΘ. Το πρώτο batizado έγινε στις 26 Ιανουαρίου 2002, με τη συμμετοχή του Mestre Beija Flor. Εκεί πήραν τα πρώτα τους κορδόνια οι σημερινοί Contra Mestre Ligeirinho, Professor Gaviao, Professor Serpente, Instrutora Araponga και Formado Trovao, που συνεχίζουν μέχρι σήμερα.</p>
+        <p>Στη συνέχεια το γκρουπ επεκτάθηκε σε Γαλλία, Κροατία, Γερμανία, καθώς και σε άλλες πόλεις της Βραζιλίας και της Ελλάδας, και αργότερα σε Τουρκία, Ινδονησία και Περού. Σήμερα έχει πλήθος νέων δασκάλων και μαθητών — και με τα παιδικά τμήματα, ήδη τους πρώτους δεύτερης γενιάς capoeiristas.</p>
+        <p class="sign">Salve Capoeira · Salve Jacobina Arte
+          <b>Professor Serpente</b>
+        </p>
+      </div>
+
+      <div class="group-map reveal">
+        <h3>Η Jacobina Arte στην υπόλοιπη Ελλάδα</h3>
+        <ul>
+          <li><span class="city">Κομοτηνή</span><span class="ppl">CM Ligeirinho</span></li>
+          <li><span class="city">Ξάνθη</span><span class="ppl">CM Ligeirinho, Professor Gaviao, Professora Pipoca</span></li>
+          <li><span class="city">Θεσσαλονίκη</span><span class="ppl">Mestre Pitbull, Professor Montanha, Professor Torneiro, Formado Robin</span></li>
+          <li><span class="city">Λάρισα</span><span class="ppl">Formado Indio</span></li>
+          <li><span class="city">Λαύριο</span><span class="ppl">Instrutor Carasco</span></li>
+          <li><span class="city">Αθήνα</span><span class="ppl">Instrutor Dracula, Formado Falcao</span></li>
+          <li><span class="city">Χαλκίδα</span><span class="ppl">Professor Caveira</span></li>
+          <li><span class="city">Αλεξανδρούπολη</span><span class="ppl">Instrutor Coelho</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery section-pad" id="gallery">
+  <div class="container">
+    <span class="eyebrow-dark">Στιγμές</span>
+    <h2 class="section-title">Από τις προπονήσεις &amp; τα events</h2>
+    <div class="gal-grid reveal">
+      <a class="tall" href="#"><img src="images/g1.jpg" alt=""></a>
+      <a class="wide" href="#"><img src="images/g2.jpg" alt=""></a>
+      <a href="#"><img src="images/g3.jpg" alt=""></a>
+      <a href="#"><img src="images/g4.jpg" alt=""></a>
+      <a class="wide" href="#"><img src="images/g5.jpg" alt=""></a>
+      <a href="#"><img src="images/g6.jpg" alt=""></a>
+      <a href="#"><img src="images/g7.jpg" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CD ============ -->
+<section class="cd section-pad" id="cd">
+  <div class="container">
+    <span class="eyebrow-dark">Δισκογραφία</span>
+    <h2 class="section-title">Το CD</h2>
+    <div class="cd-grid" style="margin-top:44px">
+      <div class="cd-cover reveal">
+        <div class="art">
+          <!-- Αν έχεις το εξώφυλλο, βάλε: <img src="images/cd-cover.jpg" alt="Εξώφυλλο CD"> και σβήσε το div ph -->
+          <div class="ph">Malandragem<br>no dojo,<br>poesia na vida</div>
+        </div>
+        <div class="meta">
+          <div class="alb">Malandragem no dojo, poesia na vida</div>
+          <div class="by">Professor Malandro · 2015</div>
+          <div class="cred">Grupo Jacobina Arte Grécia — Thessaloniki, Mestre Pitbull. Team Do Jo.go, Professor Malandro e alunos. Author &amp; cantador: Professor Malandro. Bateria: Jacare, Cabelinho, Medusa, Gato, Pernilongo, Pernalonga. Coro: Team Do Jo.go.</div>
+        </div>
+      </div>
+      <div class="cd-tracks reveal">
+        <!-- CD-TRACKS: τα src δείχνουν στα mp3 του παλιού site. Άλλαξέ τα σε audio/ αν κατεβάσεις hosting -->
+        <div class="track"><span class="n">01</span><span class="tn">Mano me chamam Capoeira</span><span class="dur">3:10</span><audio controls preload="none" src="audio/01+Track+01.mp3"></audio></div>
+        <div class="track"><span class="n">02</span><span class="tn">Histórias de ondas</span><span class="dur">3:48</span><audio controls preload="none" src="audio/02+Track+02.mp3"></audio></div>
+        <div class="track"><span class="n">03</span><span class="tn">Capoeira na rua</span><span class="dur">3:37</span><audio controls preload="none" src="audio/03+Track+03.mp3"></audio></div>
+        <div class="track"><span class="n">04</span><span class="tn">Malandragem no corpo, poesia na vida</span><span class="dur">5:16</span><audio controls preload="none" src="audio/04+Track+04.mp3"></audio></div>
+        <div class="track"><span class="n">05</span><span class="tn">É meu orgulho</span><span class="dur">4:09</span><audio controls preload="none" src="audio/05+Track+05.mp3"></audio></div>
+        <div class="track"><span class="n">06</span><span class="tn">É meu camarada</span><span class="dur">3:17</span><audio controls preload="none" src="audio/06+Track+06.mp3"></audio></div>
+        <div class="track"><span class="n">07</span><span class="tn">Dandara</span><span class="dur">3:47</span><audio controls preload="none" src="audio/07+Track+07.mp3"></audio></div>
+        <div class="track"><span class="n">08</span><span class="tn">Violinha</span><span class="dur">3:15</span><audio controls preload="none" src="audio/08+Track+08.mp3"></audio></div>
+        <div class="track"><span class="n">09</span><span class="tn">O sol e a lua da Capoeira</span><span class="dur">2:56</span><audio controls preload="none" src="audio/09+Track+09.mp3"></audio></div>
+        <div class="track"><span class="n">10</span><span class="tn">Besouro voo</span><span class="dur">2:16</span><audio controls preload="none" src="audio/10+Track+10.mp3"></audio></div>
+        <div class="track"><span class="n">11</span><span class="tn">Ja vou ja vou</span><span class="dur">4:11</span><audio controls preload="none" src="audio/11+Track+11.mp3"></audio></div>
+        <p class="cd-note">Ιδιαίτερες ευχαριστίες στους μαθητές King Kong, Gato, Perna Longa, Instrutora Dandara και σε όλους τους μαθητές για τη βοήθεια και στήριξη στη δημιουργία του CD. Ευχαριστίες στον Θανάση Παντζάλη και τον Συνοδινό Μοσχίδη για την επιμέλεια εξωφύλλου/οπισθοφύλλου, τον Στέλιο Σιούλα για ηχοληψία &amp; μίξη, και τον Χάρη Παπαδόπουλο για την εκτύπωση. Axé — <b style="color:var(--gold-bright)">Professor Malandro, 2015</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION / DOJO ============ -->
+<section class="location section-pad" id="location">
+  <div class="container">
+    <div class="loc-grid reveal">
+      <div class="loc-info">
+        <span class="eyebrow-dark">Ο χώρος μας</span>
+        <h2>Dojo</h2>
+        <p class="intro">Όλες οι προπονήσεις γίνονται στο Dojo — έναν χώρο σωματικής άσκησης και αυτοβελτίωσης.</p>
+        <div class="loc-line">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="txt"><strong>Διεύθυνση</strong><span>Πυλαίας 102, Άνω Τούμπα, Θεσσαλονίκη</span></div>
+        </div>
+        <div class="loc-line">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.98.36 1.92.68 2.82a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.32 1.84.55 2.82.68A2 2 0 0122 16.92z"/></svg>
+          <div class="txt"><strong>Email</strong><a href="mailto:stamkrav@hotmail.com">stamkrav@hotmail.com</a></div>
+        </div>
+        <div class="loc-line">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          <div class="txt"><strong>Βίντεο &amp; νέα</strong><a href="https://www.youtube.com/channel/UCCjKGXlB9h7qL73SWWvbcLw" target="_blank" rel="noopener">YouTube κανάλι →</a></div>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="margin-top:10px">Επικοινώνησε μαζί μας →</a>
+      </div>
+      <div class="loc-map">
+        <!-- GOOGLE-MAP: κεντραρισμένος στη νέα διεύθυνση. Για ακριβές pin:
+             Google Maps → βρες τη διεύθυνση → Share → Embed a map → αντίγραψε το iframe εδώ -->
+        <iframe src="https://www.google.com/maps?q=Πυλαίας%20102,%20Άνω%20Τούμπα,%20Θεσσαλονίκη&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Χάρτης — Dojo, Πυλαίας 102, Άνω Τούμπα"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <span class="eyebrow-dark" style="justify-content:center">Έλα να μας γνωρίσεις</span>
+    <h2 class="section-title">Ξεκίνα Capoeira</h2>
+    <p class="lead">Το μόνο που χρειάζεσαι είναι όρεξη και κέφι. Επικοινώνησε μαζί μας για μαθήματα, εγγραφές, εργαστήρια, εκδηλώσεις ή επαγγελματικές προτάσεις — το πρώτο μάθημα είναι δωρεάν.</p>
+    <div class="social-row">
+      <a class="social-btn" href="mailto:stamkrav@hotmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>Email</a>
+      <a class="social-btn" href="http://www.facebook.com/552415511593383" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>Facebook</a>
+      <a class="social-btn" href="https://www.youtube.com/channel/UCCjKGXlB9h7qL73SWWvbcLw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a2.7 2.7 0 00-1.9-1.9C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.7.4a2.7 2.7 0 00-1.9 1.9C1 8.5 1 12 1 12s0 3.5.4 5.2a2.7 2.7 0 001.9 1.9c1.8.4 8.7.4 8.7.4s6.9 0 8.7-.4a2.7 2.7 0 001.9-1.9C23 15.5 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg>YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="blog section-pad" id="blog">
+  <div class="container">
+    <span class="eyebrow-dark">Νέα &amp; εκδηλώσεις</span>
+    <h2 class="section-title">Blog</h2>
+    <div class="blog-grid reveal">
+      <!-- Πρόσθεσε νέο άρθρο αντιγράφοντας ένα <a class="post">...</a> και αλλάζοντας ημερομηνία/τίτλο/link -->
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2018/10/2/-2018-" target="_blank" rel="noopener"><span class="pdate">2 Οκτ 2018</span><span class="ptitle">Πρόγραμμα 2018 — Τα μαθήματα ξεκίνησαν</span></a>
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2018/5/22/batizado-2018" target="_blank" rel="noopener"><span class="pdate">22 Μαΐ 2018</span><span class="ptitle">Batizado 2018</span></a>
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2017/12/1/capoeira-" target="_blank" rel="noopener"><span class="pdate">1 Δεκ 2017</span><span class="ptitle">Capoeira για παιδιά με Διαταραχές Αυτιστικού Φάσματος</span></a>
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2017/11/1/-" target="_blank" rel="noopener"><span class="pdate">1 Νοε 2017</span><span class="ptitle">Από την εκδρομή μας στο Καταφύγιο Ολύμπου Πετρόστρουγκα</span></a>
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2017/9/21/-capoeira-82-" target="_blank" rel="noopener"><span class="pdate">21 Σεπ 2017</span><span class="ptitle">Παρουσίαση Capoeira στην 82η ΔΕΘ</span></a>
+      <a class="post" href="https://www.capoeirathessaloniki.com/blog/2016/6/5/16-batizado-jacobina-arte-" target="_blank" rel="noopener"><span class="pdate">5 Ιουν 2016</span><span class="ptitle">16ο Batizado Jacobina Arte Θεσσαλονίκη</span></a>
+    </div>
+    <p class="blog-note">Περισσότερα άρθρα και βίντεο στο <a href="https://www.capoeirathessaloniki.com/blog" target="_blank" rel="noopener">Blog</a> και στο <a href="https://www.youtube.com/channel/UCCjKGXlB9h7qL73SWWvbcLw" target="_blank" rel="noopener">YouTube κανάλι</a>.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">
+      <!-- LOGO (footer) -->
+      <img src="images/logo.jpg" alt="Jacobina Arte logo">
+      <div class="brand-text">CAPOEIRA THESSALONIKI<small>JACOBINA ARTE</small></div>
+    </div>
+    <div class="foot-links">
+      <a href="#about">Τι είναι</a><a href="#classes">Τμήματα</a><a href="#instructor">Εκπαιδευτής</a><a href="#group">Jacobina Arte</a><a href="#cd">CD</a><a href="#location">Dojo</a><a href="#blog">Blog</a><a href="#contact">Επικοινωνία</a>
+    </div>
+    <p class="copy">© <span id="year"></span> Capoeira Thessaloniki — Professor Malandro · Πυλαίας 102, Άνω Τούμπα, Θεσσαλονίκη · <a href="mailto:stamkrav@hotmail.com">stamkrav@hotmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const burger=document.getElementById('burger'),links=document.getElementById('links');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
